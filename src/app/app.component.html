@@ -1,0 +1,190 @@
+<h2>SpaceX Launch Programs</h2>
+<div id="spacexpage">
+  <div id="spaceX">
+    <div class="filterBox">
+      <h4>Filters</h4>
+      <div id="yearColumn">
+        <div class="yearTxt"><h5>Launch Year</h5></div>
+        <div class="yearColumn1">
+          <input
+            type="button"
+            value="2006"
+            class="light"
+            data-id="year"
+            (click)="filter($event)"
+          />
+          <input
+            type="button"
+            value="2008"
+            class="light"
+            data-id="year"
+            (click)="filter($event)"
+          />
+          <input
+            type="button"
+            value="2010"
+            class="light"
+            data-id="year"
+            (click)="filter($event)"
+          />
+          <input
+            type="button"
+            value="2012"
+            class="light"
+            data-id="year"
+            (click)="filter($event)"
+          />
+          <input
+            type="button"
+            value="2014"
+            class="light"
+            data-id="year"
+            (click)="filter($event)"
+          />
+          <input
+            type="button"
+            value="2016"
+            class="light"
+            data-id="year"
+            (click)="filter($event)"
+          />
+          <input
+            type="button"
+            value="2018"
+            class="light"
+            data-id="year"
+            (click)="filter($event)"
+          />
+          <input
+            type="button"
+            value="2020"
+            class="light"
+            data-id="year"
+            (click)="filter($event)"
+          />
+        </div>
+        <div class="yearColumn2">
+          <input
+            type="button"
+            value="2007"
+            class="light"
+            data-id="year"
+            (click)="filter($event)"
+          />
+          <input
+            type="button"
+            value="2009"
+            class="light"
+            data-id="year"
+            (click)="filter($event)"
+          />
+          <input
+            type="button"
+            value="2011"
+            class="light"
+            data-id="year"
+            (click)="filter($event)"
+          />
+          <input
+            type="button"
+            value="2013"
+            class="light"
+            data-id="year"
+            (click)="filter($event)"
+          />
+          <input
+            type="button"
+            value="2015"
+            class="light"
+            data-id="year"
+            (click)="filter($event)"
+          />
+          <input
+            type="button"
+            value="2017"
+            class="light"
+            data-id="year"
+            (click)="filter($event)"
+          />
+          <input
+            type="button"
+            value="2019"
+            class="light"
+            data-id="year"
+            (click)="filter($event)"
+          />
+        </div>
+      </div>
+      <div id="launchcolumn">
+        <div class="yearTxt"><h5>Successful Launch</h5></div>
+        <div class="launchColumn1">
+          <input
+            type="button"
+            value="true"
+            class="light"
+            data-id="launchProgram"
+            (click)="filter($event)"
+          />
+        </div>
+        <div class="launchColumn2">
+          <input
+            type="button"
+            value="false"
+            class="light"
+            data-id="launchProgram"
+            (click)="filter($event)"
+          />
+        </div>
+      </div>
+      <div id="landColumn">
+        <div class="yearTxt"><h5>Successful Landing</h5></div>
+        <div class="landColumn1">
+          <input
+            type="button"
+            value="true"
+            class="light"
+            data-id="landProgram"
+            (click)="filter($event)"
+          />
+        </div>
+        <div class="landColumn2">
+          <input
+            type="button"
+            value="false"
+            class="light"
+            data-id="landProgram"
+            (click)="filter($event)"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="NoDataBox">
+    <app-loader></app-loader>
+    <div *ngIf="noData">
+      <p>No Data Found</p>
+    </div>
+  </div>
+
+  <div id="spaceXResult">
+    <div class="programBox" *ngFor="let d of dataList">
+      <div class="imag">
+        <img class="missionimg" [src]="d.links.mission_patch_small" />
+      </div>
+      <div>
+        <h4>{{ d.mission_name }} # {{ d.flight_number }}</h4>
+      </div>
+      <div>
+        <h6>Mission Ids:</h6>
+        <ul *ngFor="let id of d.mission_id">
+          <li>{{ id }}</li>
+        </ul>
+      </div>
+      <div><b>Launch Year:</b>{{ d.launch_year }}</div>
+      <div><b>Successful Launch:</b>{{ d.launch_success }}</div>
+      <div *ngFor="let landingYear of d.rocket.first_stage.cores">
+        <b>Successful Landing:</b>{{ landingYear.land_success }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,175 @@
+input[type="button"] {
+  padding: 4px 8px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 10px;
+  font-size: 0.7em;
+  border: none;
+  border-radius: 4px;
+}
+#spacexpage {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+#spaceX {
+  width: 20%;
+  background-color: #fff;
+}
+#spaceXResult {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  width: 78%;
+
+  height: 600px;
+  margin: auto;
+  font-size: 0.8em;
+}
+.yearColumn1,
+.launchColumn1,
+.landColumn1 {
+  float: left;
+  width: 30%;
+}
+.yearColumn2,
+.launchColumn2,
+.landColumn2 {
+  float: right;
+  width: 30%;
+}
+#yearColumn {
+  width: 70%;
+  margin: auto;
+  height: 260px;
+}
+
+#launchcolumn,
+#landColumn {
+  width: 70%;
+  margin: auto;
+  height: 50px;
+}
+.filterBox h5 {
+  margin: 5px auto;
+  text-align: center;
+  border-bottom: 1px solid grey;
+  width: 70%;
+}
+.filterBox h4 {
+  margin-left: 10px;
+  padding-top: 10px;
+}
+.programBox {
+  display: inline-block;
+  height: 350px;
+  width: 23%;
+  background-color: #fff;
+  margin-bottom: 10px;
+}
+.programBox > div {
+  margin: 10px;
+  font-size: 0.8em;
+}
+.programBox h4 {
+  color: #4682b4;
+  margin: 0px;
+}
+.NoDataBox {
+  margin: 25px auto;
+}
+.NoDataBox p {
+  font-size: 2em;
+}
+.missionimg {
+  width: 95%;
+
+  height: 150px;
+  margin-top: 10px;
+}
+.imag {
+  text-align: center;
+  background-color: #e6e6fa;
+}
+.green {
+  background-color: #32cd32;
+}
+.light,
+.lightLaunch,
+.lightLand {
+  background-color: #90ee90;
+}
+input[type="button"]:focus {
+  outline: 0 !important;
+}
+
+@media all and (min-width: 700px) and (max-width: 1023px) {
+  .programBox {
+    width: 43%;
+    height: 400px;
+  }
+  #spaceX {
+    width: 25%;
+  }
+  #spaceXResult {
+    width: 74%;
+  }
+  .missionimg {
+    height: 200px;
+  }
+  .programBox > div {
+    font-size: 0.9em;
+  }
+}
+@media all and (max-width: 699px) {
+  .programBox {
+    width: 100%;
+    height: auto;
+  }
+  #spaceX {
+    width: 100%;
+  }
+  #spaceXResult {
+    width: 100%;
+    margin: 10px auto;
+  }
+  .missionimg {
+    height: 250px;
+  }
+  .programBox > div {
+    font-size: 1em;
+  }
+  .programBox h6 {
+    font-size: 1em;
+  }
+  .yearColumn1,
+  .yearColumn2,
+  .launchColumn1,
+  .launchColumn2,
+  .landColumn1,
+  .landColumn2 {
+    width: 20%;
+  }
+  #yearColumn {
+    height: 300px;
+  }
+  #launchColumn,
+  #landColumn {
+    height: 80px;
+    margin: 10px auto;
+  }
+  #yearColumn,
+  #launchcolumn,
+  #landColumn {
+    width: 45%;
+    margin-bottom: 25px;
+  }
+  input[type="button"] {
+    font-size: 0.8em;
+    padding: 6px 10px;
+  }
+}
