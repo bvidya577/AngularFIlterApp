@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "node dist/angular8exp/server/main.js",
-    "build": "npm run build:ssr",
+    "build": "ng build --prod && ng run angular8exp:server:production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -13,6 +13,10 @@
     "build:ssr": "ng build --prod && ng run angular8exp:server:production",
     "prerender": "ng run angular8exp:prerender"
   },
+  "engines":{
+    "node":"12.18.3",
+    "npm":"6.14.6"
+    },
   "private": true,
   "dependencies": {
     "@angular/animations": "~9.1.11",
@@ -29,16 +33,20 @@
     "rxjs": "^6.5.5",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2",
-	"@angular/cli": "~9.1.8",
-    "@angular/compiler-cli": "~9.1.11",
-    "@types/express": "^4.17.0",
-    "@types/node": "^12.11.1",
     "typescript": "~3.8.3",
-    "@nguniversal/builders": "^9.1.1"
+    "@angular/cli": "~9.1.8",
+    "@angular/compiler-cli": "~9.1.11",
+    "@nguniversal/builders": "^9.1.1",
+    "@types/express": "^4.17.0",
+    "@types/node": "^12.11.1"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.901.8",
-    
+    "@angular/cli": "~9.1.8",
+    "@angular/compiler-cli": "~9.1.11",
+    "@nguniversal/builders": "^9.1.1",
+    "@types/express": "^4.17.0",
+    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "codelyzer": "^5.1.2",
@@ -52,6 +60,6 @@
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    
+    "typescript": "~3.8.3"
   }
 }
